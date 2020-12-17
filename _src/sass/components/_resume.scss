@@ -1,0 +1,173 @@
+body {
+  font-weight: $body-font-weight;
+}
+
+dt, th.tableblock, td.content, div.footnote {
+  // NOTE text-rendering is already set for p
+  text-rendering: optimizeLegibility;
+}
+
+// QUESTION should we tighten letter spacing of text in footnotes?
+h1, h2, p, td.content, span.alt {
+  letter-spacing: -0.01em;
+}
+
+p, td.content, div.footnote {
+  strong {
+    // NOTE needs to apply anywhere we have bold prose
+    letter-spacing: -0.005em;
+  }
+}
+
+// NOTE include blockquote for when it doesn't have a nested p
+p, blockquote, dt, td.content, span.alt {
+  font-size: 1.0625rem;
+}
+
+p {
+  font-weight: $body-font-weight; 
+  line-height: $body-line-height;
+}
+
+// restore font size in sidebar block and regular table cells
+.sidebarblock p, .sidebarblock dt, .sidebarblock td.content, p.tableblock {
+  font-size: 1em;
+}
+
+.exampleblock > .content {
+  // white
+  //background-color: #fff;
+  //border-color: $panel-border-color;
+  //@include single-box-shadow($panel-border-color, 0, 1px, 2px);
+
+  // light yellow
+  background-color: #fffef7; // from rgb(252,247,227), analogous to #f8f8f7
+  border-color: $panel-border-color;
+  @include single-box-shadow($panel-border-color, 0, 1px, 4px);
+}
+
+.ulist > ul {
+  // no bullets and closer together
+  list-style: none;
+  position: relative;
+  margin-left: 0;
+  margin-bottom: 0;
+  & > li {
+    position: relative;
+  }
+}
+
+a { 
+  text-decoration: none;
+  color: $body-link-color;
+}
+
+.sect1 + .sect1 {
+  border: none;
+}
+
+.sect1 {
+  padding: 0;
+}
+
+.hdlist {
+  table { 
+    margin-left: 1.5em;
+    tbody {
+      tr {
+        td { 
+          &.hdlist1 {
+            font-weight: 300;
+            line-height: $body-line-height;
+            padding: 0 1em 0 0;
+          }
+          &.hdlist2 {
+            padding: 0;
+            p {
+              line-height: $body-line-height;
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+h1 {
+ font-size: 2.4em;
+ margin-bottom: 0.2em;
+}
+
+h2 {
+ font-size: 2.0em;
+ margin-bottom: 0.2em;
+}
+
+h3 {
+ font-size: 1.6em;
+ margin-bottom: 0.2em;
+ margin-top: 0.4em;
+}
+
+h4 {
+ font-size: 1.2em;
+ margin-bottom: 0.2em;
+}
+
+#header {
+  h1 {
+    letter-spacing: 0.2em;
+    font-weight: 300;
+  }
+  .details { 
+    span {
+      // hide the details like author
+      display: none;
+    }
+  }
+}
+
+#content {
+  .sect2 {
+    .paragraph {
+      margin-left: 1em;
+    }
+  }
+  .sect3 { 
+    margin-left: 1em;
+  } 
+  .hdlist { 
+    &.experience {
+      .hdlist1 {
+        width: 10%;
+      }
+    }
+    table {
+      width: 100%;
+      .hdlist1 {
+        width: 20%;
+      }
+      .hdlist2 {
+        width: auto;
+      }
+    }
+  }
+}
+
+.custom-footer {
+  border-top: solid 1px $hr-border-color;
+  padding-top: 1em;
+  text-align: center;
+  font-size: 80%;
+}
+
+.icon.pink {
+  color: crimson;
+}
+.icon.orange {
+  color: orangered;
+}
+
+
+@import "components/print";

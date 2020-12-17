@@ -1,0 +1,71 @@
+= asciidoctor html resume theme 
+:author: Urs Roesch
+:email: <github@bun.ch>
+:notoc:
+:noheader:
+:nofooter:
+
+This is a theme for formating a structured document such as a resume or CV
+(curriculum vitae). I used it to get a job and it obviously working as 
+I still have one :).
+
+NOTE: At this point in time there are no sample files to show how to structure
+      the document. Watch this space for furhter updates.
+
+Currently there are a few very simple color schemes available namely:
+
+* Red
+* Orange
+* Green
+* Purple
+* Dark Purple
+* Light Blue
+
+== How to use
+
+=== Copy the css file
+Simply copy one of the css files e.g the orange one `resume-orange.css` to 
+your projects root folder and run `asciidoctor` as follows:
+
+[source,shell]
+----
+asciidoctor -a stylesdir="$(pwd)" -a sytlesheet=resume-orange.css *.adoc
+----
+
+=== As a git submodule 
+
+Add the style as git submodule into your project.
+
+[source,shell]
+----
+git submodule add \
+  https://github.com/uroesch/asciidoctor-resume-theme \
+  resume
+----
+
+The run asciidoctor as shown below.
+
+[source,shell]
+----
+asciidoctor \
+  -a stylesdir="$(pwd)/resume" \
+  -a sytlesheet=resume-orange.css \
+  *.adoc
+----
+
+== Build from scratch
+
+=== Prerequisites
+* ruby
+* rake
+* docker
+
+=== Build
+
+Simply type rake and the command will download a docker container for the
+build. And create the `resume-*.css` file. 
+
+[source,shell]
+----
+rake
+----
