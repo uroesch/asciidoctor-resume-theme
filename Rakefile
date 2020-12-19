@@ -60,6 +60,7 @@ end
 # -----------------------------------------------------------------------------
 task :default => 'css:default'
 task :clean => 'css:clean'
+task :hooks => 'git_hooks:default'
 
 # -----------------------------------------------------------------------------
 # Namespaces
@@ -71,8 +72,11 @@ namespace :css do
 
   desc "Clean css creation"
   task :clean do 
-    sh %(git submodule deinit --force #{factory_dir})  
-    sh %(git rm -rf #{factory_dir})  
+    if File.exist?('.gitmodules') && File.size('.gitmodules') > 0
+      sh %(git submodule deinit --force #{factory_dir})  
+    end
+    sh %(git rm -rf #{factory_dir}) if File.exist?(factory_dir)
+    sh %(git rm --cached .gitmodules 2>/dev/null) do |x,y| end
   end
 
   task :clone_factory do
@@ -89,6 +93,24 @@ namespace :css do
   end
 
   task :default => :copy_scss do
-    sh %(#{compass} compile --css-dir #{STYLES_DIR} -s compressed)
+    # cd into the directory 
+    # when running inside docker
+    cd factory_dir do
+      sh %(#{compass} compile --css-dir #{STYLES_DIR} -s compressed)
+    end
   end
+end
+
+namespace :git_hooks do
+  task :pre_commit do
+    pre_commit = <<~HOOK
+    #!/usr/bin/env bash
+    # !! managed by rake !!
+    rake css:clean
+    HOOK
+    File.open('.git/hooks/pre-commit', 'w') do |fh|
+      fh.write(pre_commit)
+    end
+  end
+  task :default => :pre_commit 
 end
