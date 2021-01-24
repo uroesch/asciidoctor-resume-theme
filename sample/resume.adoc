@@ -1,0 +1,47 @@
+:title: Resume
+:author: Bilbo Baggins
+:revision: 2021-01
+:keywords: resume, cv
+:icons: font
+:docinfo1: 
+:notoc: 
+:nofooter: 
+
+= {title} - {author}
+
+== Personal Details
+[horizontal]
+Name:: Bilbo Baggins
+Date of Birth:: December 25. 1996
+Nationality:: New Zealand
+Address:: Hobbit Avenue 9, Hobbiton
+Email:: bilbo.baggins@middle.earth   
+Telephone:: +123 234 23 33 
+Mobile:: +123 432 32 33  
+
+
+== Education
+[horizontal]
+04.2000 – 04.2002:: Hobbiton Kindergarden   
+04.2002 – 04.2011:: Hobbiton School 
+
+== Languages
+[horizontal]
+English:: Native
+French:: Near native
+Norwegian:: Conversational
+
+
+== Technical Skills
+[horizontal]
+Certifications:: Certified Ring Bearer
+
+<<<
+
+== Employment History
+
+=== 01/2011~ -- Mines of Moria
+[horizontal,role="experience"]
+Title:: Mithril Quality Assurance
+Responsibilities::
+* Mail shirt quality assurance.
