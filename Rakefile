@@ -101,6 +101,8 @@ namespace :css do
   end
 end
 
+# -----------------------------------------------------------------------------
+
 namespace :git_hooks do
   task :pre_commit do
     pre_commit = <<~HOOK
@@ -113,4 +115,20 @@ namespace :git_hooks do
     end
   end
   task :default => :pre_commit 
+end
+
+# -----------------------------------------------------------------------------
+
+namespace :samples do
+  desc "Render HTML samples" 
+  task :html do 
+    Rake::FileList['*.css'].each do |css|
+      Rake::FileList['sample/*adoc'].each do |adoc|
+        sh %(#{asciidoctor} ) +
+           %(-a stylesheet=#{File.realpath(css)} ) +
+           %(-o #{File.join('sample', css.ext + '.html')} ) +
+           %(#{adoc})
+      end
+    end
+  end 
 end
