@@ -61,6 +61,7 @@ end
 task :default => 'css:default'
 task :clean => 'css:clean'
 task :hooks => 'git_hooks:default'
+task :test  => 'samples:test'
 
 # -----------------------------------------------------------------------------
 # Namespaces
@@ -120,6 +121,7 @@ end
 # -----------------------------------------------------------------------------
 
 namespace :samples do
+  task :test => [:html] 
   desc "Render HTML samples" 
   task :html do 
     Rake::FileList['*.css'].each do |css|
