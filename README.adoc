@@ -4,13 +4,20 @@
 :notoc:
 :noheader:
 :nofooter:
+ifndef:env-github[]
+:icons: font
+endif::env-github[]
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::env-github[]
 
 This is a theme for formating a structured document such as a resume or CV
-(curriculum vitae). I used it to get a job and it obviously working as 
+(curriculum vitae). I used it to get a job and it obviously working as
 I still have one :).
-
-NOTE: At this point in time there are no sample files to show how to structure
-      the document. Watch this space for furhter updates.
 
 Currently there are a few very simple color schemes available namely:
 
@@ -20,6 +27,67 @@ Currently there are a few very simple color schemes available namely:
 * Purple
 * Dark Purple
 * Light Blue
+
+== How to write
+
+There are two special rules for writing with this stylesheet. The first is to
+list personal information in a concise way the second is for the employment 
+history.
+
+=== Personal details, eduction and skills sections
+
+A description list is used with the modified `[horizontal]` style to render as a 
+table. The sytle modification is to space out the first column with a fixed width 
+to align the output among the sections.
+
+==== Sample 
+
+.Asciidoctor code
+[source]
+----
+== Personal Details
+[horizontal]
+Name:: Bilbo Baggins
+Date of Birth:: December 25. 1996
+Nationality:: New Zealand
+Address:: Hobbit Avenue 9, Hobbiton
+Email:: bilbo.baggins@middle.earth
+Telephone:: +123 234 23 33
+Mobile:: +123 432 32 33
+----
+
+.Rendered result
+image::images/personal-details.png[]
+
+=== Employment history section
+
+
+The employment history section also uses description lists but requires
+`role=expenrience` to be defined to render correctly. An unnumbered list
+within the description list is rendered without bullets as the sample
+below shows. 
+
+.Asciidoctor code
+[source]
+----
+== Employment History
+
+=== 01/2011~ -- Mines of Moria
+[horizontal,role="experience"]
+Title:: Mithril Quality Assurance
+Responsibilities::
+* Mail shirt quality assurance.
+* Process optimization.
+* Synergy seeker.
+Technolgies::
+* X-Ray Vision
+* Hammer 
+----
+
+.Rendered result
+image::images/employment-history.png[]
+
+NOTE: This section is not yet complete, more samples to follow.
 
 == How to use
 
