@@ -59,8 +59,15 @@ end
 # Tasks
 # -----------------------------------------------------------------------------
 task :default => 'css:default'
+
+desc "Clean workspace"
 task :clean => 'css:clean'
+
+desc "Install git hooks"
 task :hooks => 'git_hooks:default'
+task :test  => 'samples:test'
+
+desc "Render HTML samples"
 task :test  => 'samples:test'
 
 # -----------------------------------------------------------------------------
@@ -71,7 +78,7 @@ namespace :css do
   factory_dir = to_basename(FACTORY_DIR)
   sass_dir    = File.join(factory_dir, 'sass')
 
-  desc "Clean css creation"
+  desc "Clean compiled css files"
   task :clean do 
     if File.exist?('.gitmodules') && File.size('.gitmodules') > 0
       sh %(git submodule deinit --force #{factory_dir})  
@@ -122,6 +129,7 @@ end
 
 namespace :samples do
   task :test => [:html] 
+
   desc "Render HTML samples" 
   task :html do 
     Rake::FileList['*.css'].each do |css|
