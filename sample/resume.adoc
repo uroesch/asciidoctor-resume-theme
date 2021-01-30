@@ -45,3 +45,8 @@ Certifications:: Certified Ring Bearer
 Title:: Mithril Quality Assurance
 Responsibilities::
 * Mail shirt quality assurance.
+* Process optimization.
+* Synergy seeker.
+Technolgies::
+* X-Ray Vision
+* Hammer 
