@@ -7,16 +7,16 @@ Syntax error: File to import not found or unreadable: normalize.
                 Compass::SpriteImporter
         on line 2 of /home/uroesch/var/work/github/asciidoctor-resume-theme/factory/sass/settings/_defaults.scss
         from line 36 of /home/uroesch/var/work/github/asciidoctor-resume-theme/factory/sass/settings/_resume.scss
-        from line 3 of /home/uroesch/var/work/github/asciidoctor-resume-theme/factory/sass/settings/_resume-orange.scss
-        from line 2 of /home/uroesch/var/work/github/asciidoctor-resume-theme/factory/sass/resume-orange.scss
+        from line 3 of /home/uroesch/var/work/github/asciidoctor-resume-theme/factory/sass/settings/_resume-blue.scss
+        from line 2 of /home/uroesch/var/work/github/asciidoctor-resume-theme/factory/sass/resume-blue.scss
 
-1: /home/uroesch/var/work/github/asciidoctor-resume-theme/factory/sass/resume-orange.scss
+1: /home/uroesch/var/work/github/asciidoctor-resume-theme/factory/sass/resume-blue.scss
 
 Backtrace:
 /home/uroesch/var/work/github/asciidoctor-resume-theme/factory/sass/settings/_defaults.scss:2
 /home/uroesch/var/work/github/asciidoctor-resume-theme/factory/sass/settings/_resume.scss:36
-/home/uroesch/var/work/github/asciidoctor-resume-theme/factory/sass/settings/_resume-orange.scss:3
-/home/uroesch/var/work/github/asciidoctor-resume-theme/factory/sass/resume-orange.scss:2
+/home/uroesch/var/work/github/asciidoctor-resume-theme/factory/sass/settings/_resume-blue.scss:3
+/home/uroesch/var/work/github/asciidoctor-resume-theme/factory/sass/resume-blue.scss:2
 /usr/lib/ruby/gems/2.7.0/gems/sass-3.2.19/lib/sass/tree/import_node.rb:67:in `rescue in import'
 /usr/lib/ruby/gems/2.7.0/gems/sass-3.2.19/lib/sass/tree/import_node.rb:44:in `import'
 /usr/lib/ruby/gems/2.7.0/gems/sass-3.2.19/lib/sass/tree/import_node.rb:28:in `imported_file'
@@ -77,4 +77,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: File to import not found or unreadable: normalize.\A               Load paths:\A                 /home/uroesch/var/work/github/asciidoctor-resume-theme/factory/sass\A                 /usr/lib/ruby/gems/2.7.0/gems/compass-0.12.7/frameworks/blueprint/stylesheets\A                 /usr/lib/ruby/gems/2.7.0/gems/compass-0.12.7/frameworks/compass/stylesheets\A                 Compass::SpriteImporter\A         on line 2 of /home/uroesch/var/work/github/asciidoctor-resume-theme/factory/sass/settings/_defaults.scss\A         from line 36 of /home/uroesch/var/work/github/asciidoctor-resume-theme/factory/sass/settings/_resume.scss\A         from line 3 of /home/uroesch/var/work/github/asciidoctor-resume-theme/factory/sass/settings/_resume-orange.scss\A         from line 2 of /home/uroesch/var/work/github/asciidoctor-resume-theme/factory/sass/resume-orange.scss\A \A 1: /home/uroesch/var/work/github/asciidoctor-resume-theme/factory/sass/resume-orange.scss"; }
+  content: "Syntax error: File to import not found or unreadable: normalize.\A               Load paths:\A                 /home/uroesch/var/work/github/asciidoctor-resume-theme/factory/sass\A                 /usr/lib/ruby/gems/2.7.0/gems/compass-0.12.7/frameworks/blueprint/stylesheets\A                 /usr/lib/ruby/gems/2.7.0/gems/compass-0.12.7/frameworks/compass/stylesheets\A                 Compass::SpriteImporter\A         on line 2 of /home/uroesch/var/work/github/asciidoctor-resume-theme/factory/sass/settings/_defaults.scss\A         from line 36 of /home/uroesch/var/work/github/asciidoctor-resume-theme/factory/sass/settings/_resume.scss\A         from line 3 of /home/uroesch/var/work/github/asciidoctor-resume-theme/factory/sass/settings/_resume-blue.scss\A         from line 2 of /home/uroesch/var/work/github/asciidoctor-resume-theme/factory/sass/resume-blue.scss\A \A 1: /home/uroesch/var/work/github/asciidoctor-resume-theme/factory/sass/resume-blue.scss"; }
