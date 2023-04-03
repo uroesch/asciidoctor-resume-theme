@@ -10,7 +10,7 @@ BASE_DIR     = File.dirname(__FILE__)
 SRC_DIR      = File.join(BASE_DIR, '_src')
 FACTORY_DIR  = File.join(BASE_DIR, 'factory')
 STYLES_DIR   = BASE_DIR
-DOCKER_IMAGE = 'uroesch/docker-asciidoctor:latest'
+DOCKER_IMAGE = 'uroesch/asciidoctor:latest'
 
 # -----------------------------------------------------------------------------
 # Methods
