@@ -1,7 +1,7 @@
 # -----------------------------------------------------------------------------
 # Build Asciidoctor PDF sample syntax file with theme
 # Author: Urs Roesch https://github.com/uroesch
-# Version: 0.1.0
+# Version: 0.2.0
 # -----------------------------------------------------------------------------
 name: build-css-theme
 
@@ -17,17 +17,15 @@ on:
 jobs:
   build-css-theme:
     timeout-minutes: 10
-    runs-on: ${{ matrix.os }}
-    container: uroesch/docker-asciidoctor:latest
+    runs-on: ubuntu-latest
+    container: 
+      image: uroesch/asciidoctor:latest
     strategy:
       fail-fast: true
-      matrix:
-        os:
-        - ubuntu-latest
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Build theme
       shell: bash
@@ -36,5 +34,3 @@ jobs:
     - name: Create test document
       shell: bash
       run: rake test 
-
-
